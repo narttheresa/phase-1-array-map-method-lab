@@ -12,5 +12,17 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  let updatedTutorial = tutorials.map((tutorial) => {
+    let words = tutorial.split(" ");
+    let titleCase = words.map(word => {
+      let firstLetter = word.charAt(0).toUpperCase();
+      let remainingWord = word.substring(1);
+      return firstLetter + remainingWord;
+    })
+      return titleCase.join(" ");
+  });
+
+  return updatedTutorial;
+};
+
+console.log(titleCased());
